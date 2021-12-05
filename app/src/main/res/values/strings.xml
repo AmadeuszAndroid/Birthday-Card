@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">Happy Birthday</string>
-    <string name="happy_birthday_text">Happy Birthday, Sam!</string>
-    <string name="signature_text">From Amadeusz</string>
+    <string name="app_name">Wszystkiego nalpeszego</string>
+    <string name="happy_birthday_text">100 lat Maćku!</string>
+    <string name="signature_text">Życzy Amadeusz</string>
+    <string name="first_wish">dużo miłości</string>
+    <string name="second_wish">oraz pieniędzy</string>
 </resources>
