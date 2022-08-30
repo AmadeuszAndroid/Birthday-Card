@@ -3,6 +3,8 @@ package com.example.happybirthdayjetpackcompose
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
@@ -10,6 +12,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.sp
 import com.example.happybirthdayjetpackcompose.ui.theme.HappyBirthdayJetpackComposeTheme
 
 class MainActivity : ComponentActivity() {
@@ -18,11 +21,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             HappyBirthdayJetpackComposeTheme {
                 // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
-                ) {
-                    Greeting("Android")
+                Surface(color = MaterialTheme.colors.background) {
+                    BirthdayGreetingWithText("Wszystkiego najlepszego Maciek!", "- od Amadeusza")
                 }
             }
         }
@@ -30,14 +30,23 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
+fun BirthdayGreetingWithText(message: String, from: String) {
+    Column {
+        Text(
+            text = message,
+            fontSize = 36.sp
+        )
+        Text(
+            text = from,
+            fontSize = 24.sp
+        )
+    }
 }
 
 @Preview(showBackground = true)
 @Composable
-fun DefaultPreview() {
-    HappyBirthdayJetpackComposeTheme {
-        Greeting("Android")
+fun BirthDayCardPreview() {
+    HappyBirthdayJetpackComposeTheme() {
+        BirthdayGreetingWithText("Wszystkiego najlepszego Maciek!", "- od Amadeusza")
     }
 }
